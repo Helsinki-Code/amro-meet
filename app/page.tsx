@@ -16,18 +16,37 @@ export default function Page() {
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className={styles.heroContainer}>
+          <div className={styles.logoContainer}>
+            <Image
+              src="/images/logo.png"
+              alt="AmroMeet Logo"
+              width={400}
+              height={200}
+              priority
+              className={styles.logoImage}
+            />
+          </div>
           <div className={styles.heroImage}>
             <Image
-              src="/images/livekit-meet-open-graph.png"
+              src="/images/intro.png"
               alt="AmroMeet - Professional Video Conferencing"
-              width={600}
-              height={315}
+              width={800}
+              height={450}
               priority
               className={styles.openGraphImage}
             />
           </div>
           <div className={styles.header}>
-            <h1 className={styles.logo}>AmroMeet</h1>
+            <div className={styles.brandContainer}>
+              <Image
+                src="/images/amro-meet-logo.png"
+                alt="AmroMeet"
+                width={300}
+                height={100}
+                priority
+                className={styles.brandLogo}
+              />
+            </div>
             <p className={styles.tagline}>
               Professional video conferencing made simple
             </p>

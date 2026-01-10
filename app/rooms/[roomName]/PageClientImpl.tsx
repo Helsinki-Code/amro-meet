@@ -29,6 +29,7 @@ import {
 import { useRouter } from 'next/navigation';
 import { useSetupE2EE } from '@/lib/useSetupE2EE';
 import { useLowCPUOptimizer } from '@/lib/usePerfomanceOptimiser';
+import { MeetingAssistantPanel } from '@/lib/meeting-assistant/MeetingAssistantPanel';
 import styles from '../../../styles/Room.module.css';
 
 const CONN_DETAILS_ENDPOINT =
@@ -230,6 +231,7 @@ function VideoConferenceComponent(props: {
         />
         <DebugMode />
         <RecordingIndicator />
+        <MeetingAssistantPanel />
       </RoomContext.Provider>
     </div>
   );
