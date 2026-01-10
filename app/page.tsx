@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { generateRoomId } from '@/lib/client-utils';
 import styles from '../styles/Home.module.css';
@@ -15,6 +16,16 @@ export default function Page() {
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className={styles.heroContainer}>
+          <div className={styles.heroImage}>
+            <Image
+              src="/images/livekit-meet-open-graph.png"
+              alt="AmroMeet - Professional Video Conferencing"
+              width={600}
+              height={315}
+              priority
+              className={styles.openGraphImage}
+            />
+          </div>
           <div className={styles.header}>
             <h1 className={styles.logo}>AmroMeet</h1>
             <p className={styles.tagline}>

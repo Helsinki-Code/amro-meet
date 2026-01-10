@@ -29,6 +29,7 @@ import {
 import { useRouter } from 'next/navigation';
 import { useSetupE2EE } from '@/lib/useSetupE2EE';
 import { useLowCPUOptimizer } from '@/lib/usePerfomanceOptimiser';
+import styles from '../../../styles/Room.module.css';
 
 const CONN_DETAILS_ENDPOINT =
   process.env.NEXT_PUBLIC_CONN_DETAILS_ENDPOINT ?? '/api/connection-details';
@@ -69,14 +70,16 @@ export function PageClientImpl(props: {
   const handlePreJoinError = React.useCallback((e: any) => console.error(e), []);
 
   return (
-    <main data-lk-theme="default" style={{ height: '100%' }}>
+    <main data-lk-theme="default" className={styles.meetingContainer}>
       {connectionDetails === undefined || preJoinChoices === undefined ? (
-        <div style={{ display: 'grid', placeItems: 'center', height: '100%' }}>
-          <PreJoin
-            defaults={preJoinDefaults}
-            onSubmit={handlePreJoinSubmit}
-            onError={handlePreJoinError}
-          />
+        <div className={styles.preJoinWrapper}>
+          <div className={styles.preJoinContent}>
+            <PreJoin
+              defaults={preJoinDefaults}
+              onSubmit={handlePreJoinSubmit}
+              onError={handlePreJoinError}
+            />
+          </div>
         </div>
       ) : (
         <VideoConferenceComponent
@@ -218,7 +221,7 @@ function VideoConferenceComponent(props: {
   }, [lowPowerMode]);
 
   return (
-    <div className="lk-room-container">
+    <div className={`lk-room-container ${styles.roomContainer}`}>
       <RoomContext.Provider value={room}>
         <KeyboardShortcuts />
         <VideoConference

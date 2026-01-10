@@ -147,3 +147,123 @@ button, a {
     font-size: clamp(1.75rem, 12vw, 2.5rem);
   }
 }
+
+/* Minimalistic Professional Overrides for LiveKit Components */
+.lk-prejoin {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  max-width: 480px !important;
+  width: 100% !important;
+}
+
+.lk-form-group {
+  margin-bottom: 1.5rem !important;
+}
+
+.lk-form-group label {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: var(--content) !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.5rem !important;
+  display: block;
+}
+
+.lk-form-group input[type='text'],
+.lk-form-group input[type='text']:focus {
+  background: var(--surface-highlight) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 0.875rem 1rem !important;
+  font-size: 0.9375rem !important;
+  color: var(--content) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  width: 100% !important;
+  outline: none !important;
+}
+
+.lk-form-group input[type='text']:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-glow) !important;
+}
+
+.lk-button-group {
+  gap: 0.75rem !important;
+  margin-top: 2rem !important;
+}
+
+.lk-button-group button {
+  border-radius: 8px !important;
+  padding: 0.875rem 1.75rem !important;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  min-height: 48px !important;
+}
+
+/* Video preview styling */
+.lk-preview {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--border) !important;
+  background: var(--surface-highlight) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.lk-preview video {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Settings panel styling */
+.lk-settings-menu {
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: none !important;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Chat panel styling */
+.lk-chat {
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: none !important;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-highlight);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--content-muted);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--primary-glow);
+  color: var(--content);
+}
+
+::-moz-selection {
+  background: var(--primary-glow);
+  color: var(--content);
+}
