@@ -661,15 +661,29 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  .orb1, .orb2, .orb3,
-  .floatingCard1, .floatingCard2, .floatingCard3,
-  .badgeDot, .recordingDot {
+  .heroContainer,
+  .logoContainer,
+  .heroImage,
+  .header,
+  .brandLogo,
+  .logoImage,
+  .startButton,
+  .buttonIcon,
+  .orb1,
+  .orb2,
+  .orb3,
+  .floatingCard1,
+  .floatingCard2,
+  .floatingCard3,
+  .badgeDot,
+  .recordingDot {
     animation: none !important;
+    transition: none !important;
+  }
+
+  .brandLogo:hover,
+  .logoImage:hover,
+  .heroImage:hover {
+    transform: none;
   }
 }
