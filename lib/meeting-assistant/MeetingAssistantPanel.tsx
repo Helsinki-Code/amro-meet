@@ -169,9 +169,9 @@ export function MeetingAssistantPanel() {
           <>
             <div className={styles.notesSection}>
               <h4>Meeting Summary</h4>
-              <p className={styles.summary}>{notes.summary}</p>
+              <p className={styles.summary}>{notes.summary || 'No summary available.'}</p>
 
-              {notes.actionItems.length > 0 && (
+              {notes.actionItems && Array.isArray(notes.actionItems) && notes.actionItems.length > 0 && (
                 <div className={styles.actionItems}>
                   <h4>Action Items</h4>
                   <ul>
@@ -195,7 +195,7 @@ export function MeetingAssistantPanel() {
                 </div>
               )}
 
-              {notes.keyTopics.length > 0 && (
+              {notes.keyTopics && Array.isArray(notes.keyTopics) && notes.keyTopics.length > 0 && (
                 <div className={styles.topics}>
                   <h4>Key Topics</h4>
                   <div className={styles.topicsList}>
@@ -208,7 +208,7 @@ export function MeetingAssistantPanel() {
                 </div>
               )}
 
-              {notes.participants.length > 0 && (
+              {notes.participants && Array.isArray(notes.participants) && notes.participants.length > 0 && (
                 <div className={styles.participants}>
                   <h4>Participants</h4>
                   <p>{notes.participants.join(', ')}</p>
