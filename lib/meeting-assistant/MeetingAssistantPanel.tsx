@@ -25,7 +25,14 @@ export function MeetingAssistantPanel() {
       if (response.ok) {
         const data = await response.json();
         if (data.success && data.notes) {
-          setNotes(data.notes);
+          const notes = data.notes as MeetingNotes;
+          setNotes({
+            ...notes,
+            actionItems: Array.isArray(notes.actionItems) ? notes.actionItems : [],
+            keyTopics: Array.isArray(notes.keyTopics) ? notes.keyTopics : [],
+            participants: Array.isArray(notes.participants) ? notes.participants : [],
+            summary: notes.summary || 'No summary available.',
+          });
         }
       }
     } catch (error) {
